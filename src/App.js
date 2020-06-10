@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Navbar from './components/layout/Navbar';
+import Home from './components/layout/Home';
+import About from './components/layout/About';
+import Events from './components/layout/Events';
+import Schedule from './components/Schedule';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import './App.css';
+//Redux
+import { Provider } from 'react-redux';
+import store from './store';
+
+const App = () => {
+	return (
+		<Provider store={store}>
+			<Router>
+				<Fragment>
+					<Navbar />
+					<Route exact path="/" component={Home} />
+					<div className="container">
+						<Route exact path="/" component={About} />
+						<Route exact path="/" component={Events} />
+					</div>
+
+					<Switch>
+						<Route exact path="/schedule" component={Schedule} />
+					</Switch>
+				</Fragment>
+			</Router>
+		</Provider>
+	);
+};
 
 export default App;

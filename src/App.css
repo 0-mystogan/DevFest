@@ -1,38 +1,275 @@
-.App {
-  text-align: center;
+/* Global Styles */
+:root {
+	--primary-color: #414141;
+	--secondary-color: #9e9e9e;
+	--light-blue: #00c4b8;
+	--danger-color: #dc3545;
+	--success-color: #28a745;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1rem;
+	line-height: 1.6;
+	background-color: #f5f5f5;
+	color: #414141;
+}
+.btn {
+	display: inline-block;
+	background: var(--light-blue);
+	color: #333;
+	padding: 0.4rem 1.3rem;
+	font-size: 1rem;
+	border: none;
+	cursor: pointer;
+	margin-right: 0.5rem;
+	transition: opacity 0.2s ease-in;
+	outline: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ul {
+	list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+img {
+	width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+	color: var(--primary-color);
+	text-decoration: none;
+}
+
+/* Text Styles*/
+.x-large {
+	font-size: 4rem;
+	line-height: 1.2;
+	margin-bottom: 1rem;
+}
+
+.large {
+	font-size: 3rem;
+	line-height: 1.2;
+	margin-bottom: 1rem;
+}
+
+.lead {
+	font-size: 1.5rem;
+	display: block;
+	margin-top: 2rem;
+	margin-left: 2rem;
+}
+
+.small {
+	font-size: 0.1rem;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-primary {
+	color: var(--primary-color);
+}
+
+.text-dark {
+	color: var(--dark-color);
+}
+
+/* Container Part*/
+.container {
+	width: 80%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	justify-content: space-between;
+	text-align: center;
+}
+
+/* Navbar */
+.navbar {
+	/* display: flex;
+	justify-content: space-between;
+	align-items: right;
+	flex-direction: column; */
+	padding: 0.7rem 2rem;
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	top: 0;
+	opacity: 0.9;
+}
+
+.navbar ul {
+	display: flex;
+	margin-left: 80%;
+}
+
+.navbar a {
+	color: #fff;
+	padding: 0.45rem;
+	margin: 0 0.25rem;
+}
+
+.navbar a:hover {
+	border-bottom: solid 1px var(--light-blue);
+}
+
+/* Home Page */
+.home {
+	position: relative;
+	background: url('./img/home.jpg') no-repeat center center/cover;
+	height: 100vh;
+}
+.home-inner {
+	color: #fff;
+	height: 100%;
+	width: 50%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.inner-logo {
+	color: #fff;
+	height: 10%;
+	width: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+/* Logo img */
+.logo {
+	width: 10%;
+	height: 100%;
+}
+
+/* About Part*/
+.about {
+	display: flex;
+}
+.about-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+}
+
+.about-inner-text {
+	text-align: left;
+	margin: 2rem;
+	width: 100%;
+}
+
+.about-num {
+	width: 25%;
+	justify-content: space-evenly;
+}
+
+.num {
+	width: 70%;
+	text-align: center;
+	margin-left: 2rem;
+	padding-top: 3rem;
+	padding-bottom: 5rem;
+}
+.num > h1 {
+	border-bottom: solid 1px var(--light-blue);
+}
+
+.link {
+	margin-left: 2rem;
+	color: var(--light-blue);
+}
+
+/* Events */
+.events {
+	width: 100%;
+	padding: 2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	text-align: left;
+}
+
+.border-content {
+	border: solid 1px var(--secondary-color);
+	position: relative;
+	height: 130px;
+	padding-left: 0.5rem;
+	width: 90%;
+}
+
+.content-color {
+	width: 70%;
+	color: var(--secondary-color);
+	font-size: 15px;
+}
+
+.right-top {
+	color: var(--secondary-color);
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+}
+
+.right-bottom {
+	position: absolute;
+	bottom: 0.5rem;
+	right: 0.5rem;
+}
+
+.left-bottom {
+	color: var(--secondary-color);
+	position: absolute;
+	bottom: 0.5rem;
+	left: 0.5rem;
+}
+
+.Cloud {
+	padding: 5px 15px 5px 15px;
+	color: var(--light-blue);
+	border: solid 1px var(--light-blue);
+	border-radius: 40%;
+}
+
+.Web {
+	color: #8741b5;
+	padding: 5px 15px 5px 15px;
+	border: solid 1px #8741b5;
+	border-radius: 40%;
+}
+
+.Android {
+	color: #18c96b;
+	padding: 5px 15px 5px 15px;
+	border: solid 1px #18c96b;
+	border-radius: 40%;
+}
+
+/* Schedule Page */
+.schedule {
+	height: 100%;
+	width: 80%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
